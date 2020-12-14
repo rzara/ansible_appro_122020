@@ -3,3 +3,14 @@ manager ansible_connection=local
 srv01 ansible_ssh_host=172.28.128.82
 srv02 ansible_ssh_host=172.28.128.83
 srv03 ansible_ssh_host=172.28.128.84
+
+[linux:children]
+debian
+centos
+
+[debian]
+srv01
+srv02
+
+[centos]
+srv03

@@ -22,7 +22,11 @@
 
 
 
+
+
 # Inventaire - surcharge de variable
+
+- Création d'un répertoire inventaires et d'un inventaire (fichier hosts)
 
 # Facts - cache - récupération de facts "externes"
 
