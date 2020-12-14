@@ -1,0 +1,35 @@
+# Installation - Environment Ansible (config, version)
+=> Installation avec package des dépôts officiels des distributions
+
+=> Installation en virtualenv Python : 
+   => n virtualenv sur la même machine pour un même utilisateur
+   => Utile pour tester une nouvelle version d'ansible sans impacter notre environnement actuel
+   => Choix de version d'ansible
+
+   => Commandes :
+      $ sudo apt update
+      $ sudo apt install python3-pip python3-venv
+      # Creation du virtualenv :
+      $ python3 -m venv /home/vagrant/ansible_venv_2.9
+      # Activation du virtualenv :
+      $ source /home/vagrant/ansible_venv_2.9/bin/activate
+      # Installation dansible 2.9 via pip dans ce virtualenv
+      $ pip3 install ansible==2.9
+      # Check version:
+      $ ansible --version
+      # SI on souhaite quitter le venv :
+      $ deactivate
+
+
+
+# Inventaire - surcharge de variable
+
+# Facts - cache - récupération de facts "externes"
+
+# Templating approfondi 
+
+# Système de délégation
+
+# Roles - Structure d'un projet ansible - Git
+
+
