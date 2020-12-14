@@ -14,3 +14,10 @@ srv02
 
 [centos]
 srv03
+
+[webservers]
+srv01
+srv02
+
+[haproxy]
+srv03

@@ -1,0 +1,13 @@
+TP1 : Déploiement d'une infra haproxy + apache
+
+debian : 2 apache
+
+centos : haproxy
+
+1 PLAYBOOK :
+
+1 PLAY : installation apache sur les debian
+
+2 PLAY : instalation haproxy sur centos
+         modéliser sa conf pour connaitre les noeuds apache
+         => Si la config est erronée
