@@ -35,3 +35,11 @@
         owner: root
         group: root
         mode: '0640'
+      notify:
+        - restart haproxy
+
+  handlers:
+    - name: restart haproxy
+      ansible.builtin.service:
+        name: haproxy
+        state: restarted
