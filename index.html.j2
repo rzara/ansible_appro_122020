@@ -1,9 +1,32 @@
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <body>
     <p> Serveur web deployé par Ansible :
     <p> {{ ansible_facts['hostname'] }}
     <p> Variable applicative: {{ ma_variable |default('variable par defaut') }}
     {# Utilisation de |default pour ne pas générer une erreur si variable non définie #}
     <p> Variable applicative: {{ ma_variable2 |default }}
+
+    {# Utilisation des "filters jinja" #}
+    <p> {{ ma_variable3 | upper }}
+
+    {# Utilisation de if #}
+    {% if ansible_facts['nodename'] == 'srv01' %}
+      <p> OK : serveur web éligible
+    {% elif ansible_facts['nodename'] != 'srv01' %}
+      <p> Serveur secondaire
+    {% endif %}
+
+    {# Directive include : include d'un fichier externe de type jinja2#}
+    {% if ansible_facts['memory_mb']['real']['used'] > 200 %}
+      {% include 'procedure.j2' %}
+    {% endif %}
+
+    {# Declaration d'une variable #}
+    {% if ansible_facts['distribution_version'] == '18.04' %}
+    {% set spec_variable='variable cree dans template' %}
+    {% endif %}
+
+    <p>{{ spec_variable }}
   </body>
 </html>
