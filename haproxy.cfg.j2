@@ -17,7 +17,7 @@ listen cluster
 {# Utilisation d'une groupe d'inventaire pour récuperer des facts externes #}
 {# Creation d'une boucle for pour traiter chaque elements du groupe à analyser #}
 {% for i in groups['webservers'] %}
-  server {{ hostvars[i]['ansible_facts']['hostname'] }}
+  server {{ hostvars[i]['ansible_facts']['hostname'] }} {{ hostvars[i]['ansible_facts']['enp0s8']['ipv4']['address'] }}:80
 {% endfor %}
 
 option httpchk HEAD /index.html HTTP/1.0
