@@ -1,0 +1,7 @@
+---
+
+- name: PLAY premier playbook
+  hosts: linux
+
+- name: PLAY2 sur target différente
+  hosts: manager

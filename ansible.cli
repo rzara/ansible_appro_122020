@@ -17,6 +17,10 @@
       $ pip3 install ansible==2.9
       # Check version:
       $ ansible --version
+      # Installation du linter ansible (relecture de code)
+      $ pip3 install ansible-lint
+
+
       # SI on souhaite quitter le venv :
       $ deactivate
 
@@ -24,9 +28,17 @@
 
 
 
+
 # Inventaire - surcharge de variable
 
+Analyser un inventaire :
+=> Commande ansible-inventory :
+   $ ansible-inventory -i inventaires/hosts --graph
+   $ ansible-inventory -i inventaires/hosts --list
+
 - Création d'un répertoire inventaires et d'un inventaire (fichier hosts)
+
+
 
 # Facts - cache - récupération de facts "externes"
 
