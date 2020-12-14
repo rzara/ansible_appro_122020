@@ -1,6 +1,6 @@
 manager ansible_connection=local
 
-srv01 ansible_ssh_host=172.28.128.82
+srv01 ansible_ssh_host=172.28.128.82  ma_variable2="declaree dans le fichier d'inventaire pour le node srv01" 
 srv02 ansible_ssh_host=172.28.128.83
 srv03 ansible_ssh_host=172.28.128.84
 
@@ -21,3 +21,12 @@ srv02
 
 [haproxy]
 srv03
+
+[linux:vars]
+ma_variable2="declaree dans le fichier d'inventaire pour le groupe linux"
+
+[webservers:vars]
+ma_variable2="declaree dans le fichier d'inventaire pour le groupe webservers"
+
+[debian:vars]
+ma_variable2="declaree dans le fichier d'inventaire pour le groupe debian"

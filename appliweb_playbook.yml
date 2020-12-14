@@ -4,6 +4,7 @@
 
   vars:
     pkg_apache: apache2
+    #ma_variable2: "declarée dans le playbook"
 
   tasks:
     # Appel du module apt pour vérifier/installer le package apache2

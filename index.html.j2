@@ -1,6 +1,9 @@
 <html>
   <body>
-    Serveur web deployé par Ansible :
-    {{ ansible_facts['hostname'] }}
+    <p> Serveur web deployé par Ansible :
+    <p> {{ ansible_facts['hostname'] }}
+    <p> Variable applicative: {{ ma_variable |default('variable par defaut') }}
+    {# Utilisation de |default pour ne pas générer une erreur si variable non définie #}
+    <p> Variable applicative: {{ ma_variable2 |default }}
   </body>
 </html>
