@@ -35,6 +35,8 @@
         owner: root
         group: root
         mode: '0640'
+        # Utilisation du paramètre validate pour éviter la copie direct d'un fichier mal préparé
+        validate: /usr/sbin/haproxy -c -f %s
       notify:
         - restart haproxy
 
