@@ -24,9 +24,3 @@ srv03
 
 [linux:vars]
 ma_variable2="declaree dans le fichier d'inventaire pour le groupe linux"
-
-[webservers:vars]
-ma_variable2="declaree dans le fichier d'inventaire pour le groupe webservers"
-
-[debian:vars]
-ma_variable2="declaree dans le fichier d'inventaire pour le groupe debian"
