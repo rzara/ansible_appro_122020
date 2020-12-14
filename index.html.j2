@@ -18,7 +18,7 @@
     {% endif %}
 
     {# Directive include : include d'un fichier externe de type jinja2#}
-    {% if ansible_facts['memory_mb']['real']['used'] > 200 %}
+    {% if ansible_facts['memory_mb']['real']['used'] > 300 %}
       {% include 'procedure.j2' %}
     {% endif %}
 

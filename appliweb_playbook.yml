@@ -54,22 +54,24 @@
       tags:
         - haproxy
 
-      # Utilisation du module uri pour interroger le service web haproxy
-    - name: "test url haproxy"
-      uri: 
-        url: "http://{{ ansible_facts['eth1']['ipv4']['address'] }}/index.html"
-        return_content: yes
-      # Utilisation directive register pour stocker le resultat du module uri
-      register: output_uri
-      tags:
-       - url_test
-       - haproxy
-      failed_when: "'Consommation mémoire élevée' in output_uri.content"
-
-     # Module debug : pour analyser la structure d'une variable
-    - name: "analyse resultat uri"
-      debug:
-        var: output_uri
+    - name: "Creation d'un block pour utiliser le mode rescue"
+      block:
+        # Utilisation du module uri pour interroger le service web haproxy
+        - name: "test url haproxy"
+          uri: 
+            url: "http://{{ ansible_facts['eth1']['ipv4']['address'] }}/index.html"
+            return_content: yes
+          # Utilisation directive register pour stocker le resultat du module uri
+          register: output_uri
+          tags:
+           - url_test
+           - haproxy
+          failed_when: "'Consommation mémoire élevée' in output_uri.content"
+      rescue:
+        # Execution si failed dans le bloxk
+        - name: "passage dans mode rescue"
+          debug:
+            msg: "WARNING: Pb mémoire sur serveur web"
 
 
   handlers:
