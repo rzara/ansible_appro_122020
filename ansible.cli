@@ -25,8 +25,12 @@
       $ deactivate
 
 
+# TAGS
 
+$ ansible-playbook appliweb_playbook.yml --become --list-tasks
 
+$ ansible-playbook appliweb_playbook.yml --become --tags=url_test
+$ ansible-playbook appliweb_playbook.yml --become --skip-tags=url_test
 
 
 # Inventaire - surcharge de variable

@@ -25,16 +25,29 @@
 
 - name: "PLAY2 | Deploiement HAPROXY"
   hosts: haproxy
+  tags:
+    - play_haproxy
 
   vars:
     pkg_haproxy: haproxy
 
   tasks:
+
+    # Utilisation du module uri pour interroger le service web haproxy
+    - name: "test url haproxy"
+      uri: 
+        url: "http://{{ ansible_facts['eth1']['ipv4']['address'] }}/haproxy?stats"
+      tags:
+       - url_test
+       - haproxy
+
     # Appel du module yum pour vérifier/installer le package haproxy
     - name: "Installation haproxy"
       ansible.builtin.yum:
         name: "{{ pkg_haproxy }}"
         state: present
+      tags:
+       - haproxy
     
     # Appel du module template : fichiers dynamique qui se construit au travers de variables
     - name: "Configuration du haproxy"
@@ -48,6 +61,11 @@
         validate: /usr/sbin/haproxy -c -f %s
       notify:
         - restart haproxy
+      tags:
+        - haproxy
+
+
+
 
   handlers:
     - name: restart haproxy
