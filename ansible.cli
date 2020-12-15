@@ -61,9 +61,16 @@ https://docs.ansible.com/ansible/2.4/intro_configuration.html#gathering
 https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html
 
 -------------------------------------------------
-## ANSIBLE tasks asynchrones
+## ANSIBLE tasks asynchrones - wait_for
 -------------------------------------------------
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_async.html
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/wait_for_module.html
 
+
+-------------------------------------------------
+## ANSIBLE playbooks strategies
+-------------------------------------------------
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_strategies.html
 
 
 # Roles - Structure d'un projet ansible - Git
