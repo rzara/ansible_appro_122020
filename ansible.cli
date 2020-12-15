@@ -44,15 +44,27 @@ Analyser un inventaire :
 
 
 
-# Facts - cache - récupération de facts "externes"
+----------------------------------------------
+## FACT_CACHING
+----------------------------------------------
+https://docs.ansible.com/ansible/latest/plugins/cache.html
+https://docs.ansible.com/ansible/2.5/plugins/cache.html
+https://docs.ansible.com/ansible/2.4/intro_configuration.html#gathering
 
 
 
-# Templating approfondi 
+# Templating approfondi
+
+-------------------------------------------------
+## ANSIBLE DELEGATION
+-------------------------------------------------
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html
+
+-------------------------------------------------
+## ANSIBLE tasks asynchrones
+-------------------------------------------------
 
 
-
-# Système de délégation
 
 # Roles - Structure d'un projet ansible - Git
 

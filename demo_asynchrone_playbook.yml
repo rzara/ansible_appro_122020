@@ -1,0 +1,20 @@
+---
+- name: "PLAY demo tasks asynchrone"
+  hosts: linux
+
+  tasks:
+
+    - name: "Task 1"
+      command: /bin/sleep 30
+      # ASYNC : attente sur 10 secondes avec un poll (check result) toutes les 2 secondes
+      async: 5
+      poll: 1
+      ignore_errors: true
+      register: output_async
+
+    - name: "Task 2"
+      command: /bin/true
+
+    - name: "Debug de l'output"
+      debug:
+        var: output_async
