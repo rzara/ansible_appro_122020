@@ -3,5 +3,16 @@
 - name: PLAY premier playbook
   hosts: linux
 
+  tasks:
+    - name: "Creation repertoire"
+      file:
+        state: directory
+        path: /home/vagrant/test
+
+    - name: "Creation d'un fichier"
+      copy:
+        content: "Ecriture"
+        dest: /home/vagrant/test/fichier.txt
+
 - name: PLAY2 sur target différente
   hosts: manager
