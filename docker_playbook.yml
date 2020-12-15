@@ -27,5 +27,6 @@
         image: nginx:1.18
         state: started
         published_ports: 8080:80
+        container_default_behavior: compatibility
       tags:
         - create_container
