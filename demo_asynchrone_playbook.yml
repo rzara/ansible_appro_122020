@@ -6,15 +6,29 @@
 
     - name: "Task 1"
       command: /bin/sleep 30
-      # ASYNC : attente sur 10 secondes avec un poll (check result) toutes les 2 secondes
-      async: 5
-      poll: 1
-      ignore_errors: true
+      # ASYNC : attente sur 40 secondes avec un poll (check result) à 0 (on passe directement à la task suivante)
+      async: 40
+      poll: 0
+      #ignore_errors: true
       register: output_async
 
     - name: "Task 2"
       command: /bin/true
 
+    - name: "Task 3"
+      command: /bin/true
+
+    - name: "Task 4"
+      command: /bin/true
+
     - name: "Debug de l'output"
       debug:
         var: output_async
+    
+    - name: "Reprise du status la task 1"
+      async_status:
+        jid: "{{ output_async.ansible_job_id }}"
+      register: job_result
+      until: job_result.finished
+      retries: 30
+      delay: 1
