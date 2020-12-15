@@ -1,12 +1,36 @@
 ---
 - name: "PLAY demo facts"
   hosts: linux
-  gather_subset:
-    - '!all'
-    - 'network'
+  gather_facts: true
+  #gather_subset:
+  #  - '!all'
+  #  - 'network'
   
   tasks:
     - name: "Enregister un facts"
       ansible.builtin.set_fact:
         ansible_fact_perso: something
         cacheable: yes
+  
+    - name: "Creation d'un fichier"
+      copy:
+        content: "Deploiement ansible"
+        dest: /home/vagrant/fichier.txt
+        owner: vagrant
+        group: vagrant
+        mode: '0640'
+
+    - name: "Copie d'un fichier depuis ansible manager"
+      copy:
+        src: fichier_a_copier
+        dest: /home/vagrant/fichier.txt
+        owner: vagrant
+        group: vagrant
+        mode: '0640'
+
+    - name: "Modification d'un fichier avec lineinfile"
+      ansible.builtin.lineinfile:
+        line: "{{ ansible_facts['all_ipv4_addresses'] }}"
+        path: retour_delegate.txt
+      delegate_to: localhost
+
