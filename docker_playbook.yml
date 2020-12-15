@@ -4,5 +4,10 @@
   gather_facts: true
   become: true
 
+  vars:
+    pip_install_packages:
+      - name: docker
+
   roles:
+    - ansible_role_pip_2.0.0
     - ansible_role_docker_2.9.0

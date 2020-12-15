@@ -6,6 +6,10 @@
   version: '2.9.0'
   name: 'ansible_role_docker_2.9.0'
 
+- src: 'geerlingguy.pip'
+  version: '2.0.0'
+  name: 'ansible_role_pip_2.0.0'
+
 
 ## GIT Entreprise
 
@@ -17,5 +21,5 @@
 #- src: 'git@github.paris.fr:ansible/ansible_role_haproxy'
 #  scm: git
 #  version: '1.0.0'
-#  name: ansible_role_haproxy_1.0.0
+#  name: ansible_role_haproxy
 

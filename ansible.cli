@@ -25,8 +25,17 @@
       $ deactivate
 
 
-# TAGS
+---------------------------------------
+## ANSIBLE LINTER
+--------------------------------------
+=> Analyse de syntaxe : bonne pratiques, espaces en trop etc...
+$ ansible-lint appliweb_playbook.yml
 
+==> Possibilité de forcer la lint avant contribution GIT : hooks
+    ANSIBLE ENI Chapitre 2, 6.3 Mécanisme de hook
+
+
+# TAGS
 $ ansible-playbook appliweb_playbook.yml --become --list-tasks
 
 $ ansible-playbook appliweb_playbook.yml --become --tags=url_test
