@@ -82,8 +82,9 @@ https://docs.ansible.com/ansible/latest/collections/ansible/builtin/wait_for_mod
 https://docs.ansible.com/ansible/latest/user_guide/playbooks_strategies.html
 
 
-
-# Roles - Structure d'un projet ansible - Git
+---------------------------------------------------
+## ANSIBLE  Roles - Structure d'un projet ansible - Git
+-----------------------------------------------------
 => Plateforme publique ansible pour les role, le collections (modules)
 https://galaxy.ansible.com/
 
@@ -98,3 +99,10 @@ Ex d'utilisation:
 Ex de création d'un role :
 1°) Création du skeleton :
 $ ansible-galaxy init roles/ansible_role_haproxy_1.0.0
+
+
+---------------------------------------------------
+## ANSIBLE Modules community
+---------------------------------------------------
+Ex : docker
+=> il est possible que les modules souhaités ne soient pas dispo d'office dans notre install par défaut ansible

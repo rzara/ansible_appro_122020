@@ -11,3 +11,12 @@
   roles:
     - ansible_role_pip_2.0.0
     - ansible_role_docker_2.9.0
+
+  tasks:
+    - name: "Gestion d'image docker"
+      community.general.docker_image:
+        name: nginx
+        tag: '1.18'
+        source: pull
+      tags:
+        - pull_image
