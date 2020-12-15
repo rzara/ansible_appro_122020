@@ -4,3 +4,9 @@
   gather_subset:
     - '!all'
     - 'network'
+  
+  tasks:
+    - name: "Enregister un facts"
+      ansible.builtin.set_fact:
+        ansible_fact_perso: something
+        cacheable: yes
