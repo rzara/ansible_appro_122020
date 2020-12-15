@@ -1,0 +1,16 @@
+---
+
+## GITHUB / GALAXY
+
+- src: 'geerlingguy.docker'
+  version: '2.9.0'
+  name: 'ansible_role_docker_2.9.0'
+
+
+## GIT Entreprise
+
+#- src: 'git@github.paris.fr:ansible/ansible_role_docker'
+#  scm: git
+#  version: '0.0.1'
+#  name: ansible_role_docker_0.0.1
+

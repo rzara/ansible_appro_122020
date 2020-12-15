@@ -73,6 +73,16 @@ https://docs.ansible.com/ansible/latest/collections/ansible/builtin/wait_for_mod
 https://docs.ansible.com/ansible/latest/user_guide/playbooks_strategies.html
 
 
+
 # Roles - Structure d'un projet ansible - Git
+=> Plateforme publique ansible pour les role, le collections (modules)
+https://galaxy.ansible.com/
+
+Ex d'utilisation: 
+1°) Mon projet a un playbook qui utilise un rôle
+2°) Les rôle n'étants pas versionnés dans le dépot de mon projet je dois les installer
+    => Creation d'un fichier "requirements.yml" qui contiendra la liste des rôles nécessaire au projet
+3°) Installation des rôles via ansible-galaxy :
+    => ansible-galaxy install -p roles/ -r requirements.yml
 
 

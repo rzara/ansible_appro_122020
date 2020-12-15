@@ -1,0 +1,8 @@
+---
+- name: "PLAY installation docker hôte"
+  hosts: docker
+  gather_facts: true
+  become: true
+
+  roles:
+    - ansible_role_docker_2.9.0

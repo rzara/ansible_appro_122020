@@ -24,3 +24,6 @@ srv03
 
 [linux:vars]
 ma_variable2="declaree dans le fichier d'inventaire pour le groupe linux"
+
+[docker]
+srv02
