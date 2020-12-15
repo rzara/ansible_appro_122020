@@ -86,3 +86,6 @@ Ex d'utilisation:
     => ansible-galaxy install -p roles/ -r requirements.yml
 
 
+Ex de création d'un role :
+1°) Création du skeleton :
+$ ansible-galaxy init roles/ansible_role_haproxy_1.0.0
