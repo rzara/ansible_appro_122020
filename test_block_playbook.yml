@@ -1,0 +1,15 @@
+---
+- name: PLAY block
+  hosts: linux
+
+  tasks:
+    - name: block1
+      block:
+        - name: "test1"
+          debug:
+            msg: "on est dans le premier block"
+        - name: "block2"
+          block:
+            - name: "test block2"
+              debug:
+                msg: "on est dans le second block"

@@ -59,7 +59,7 @@
         # Utilisation du module uri pour interroger le service web haproxy
         - name: "test url haproxy"
           uri: 
-            url: "http://{{ ansible_facts['eth1']['ipv4']['address'] }}/index.html"
+            url: "http://{{ ansible_ssh_host }}/index.html"
             return_content: yes
           # Utilisation directive register pour stocker le resultat du module uri
           register: output_uri
@@ -67,6 +67,7 @@
            - url_test
            - haproxy
           failed_when: "'Consommation mémoire élevée' in output_uri.content"
+          delegate_to: localhost
       rescue:
         # Execution si failed dans le bloxk
         - name: "passage dans mode rescue"
