@@ -1,6 +1,7 @@
 ---
 - name: "PLAY1 | Deploiement des serveurs web"
   hosts: webservers
+  gather_facts: True
 
   vars:
     pkg_apache: apache2

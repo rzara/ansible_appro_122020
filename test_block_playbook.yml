@@ -1,6 +1,7 @@
 ---
 - name: PLAY block
   hosts: linux
+  gather_facts: no
 
   tasks:
     - name: block1

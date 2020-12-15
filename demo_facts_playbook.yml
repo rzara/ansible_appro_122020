@@ -1,3 +1,6 @@
 ---
 - name: "PLAY demo facts"
   hosts: linux
+  gather_subset:
+    - '!all'
+    - 'network'
