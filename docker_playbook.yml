@@ -20,3 +20,12 @@
         source: pull
       tags:
         - pull_image
+      
+    - name: "Creation d'un conteneur docker"
+      community.general.docker_container:
+        name: nginx01
+        image: nginx:1.18
+        state: started
+        published_ports: 8080:80
+      tags:
+        - create_container

@@ -1,4 +1,6 @@
-# Installation - Environment Ansible (config, version)
+-------------------------------------------------------------------
+## ANSIBLE Installation - Environment Ansible (config, version)
+-------------------------------------------------------------------
 => Installation avec package des dépôts officiels des distributions
 
 => Installation en virtualenv Python : 
@@ -23,6 +25,23 @@
 
       # SI on souhaite quitter le venv :
       $ deactivate
+
+----------------------------------------------------------------
+## ANSIBLE Nouveau venv pour nouvelle version ANSIBLE
+----------------------------------------------------------------
+Recherche des release pip ansible :
+https://pypi.org/project/ansible/#history
+
+1°) Sortie du virtualenv actuel : 
+$ deactivate
+2°) Création d'un virtualenv python3 pour notre future version d'ansible
+$ python3 -m venv /home/vagrant/ansible_venv_2.10.4
+3°) Sourcing du nouveau venv
+$ source /home/vagrant/ansible_venv_2.10.4/bin/activate
+4°) Installation ansible via pip
+$ pip3 install ansible==2.10.4
+
+
 
 
 ---------------------------------------
@@ -106,3 +125,5 @@ $ ansible-galaxy init roles/ansible_role_haproxy_1.0.0
 ---------------------------------------------------
 Ex : docker
 => il est possible que les modules souhaités ne soient pas dispo d'office dans notre install par défaut ansible
+=> On peut installer la collection via ansible-galaxy :
+   $ ansible-galaxy collection install community.general
