@@ -14,3 +14,8 @@
 #  version: '0.0.1'
 #  name: ansible_role_docker_0.0.1
 
+#- src: 'git@github.paris.fr:ansible/ansible_role_haproxy'
+#  scm: git
+#  version: '1.0.0'
+#  name: ansible_role_haproxy_1.0.0
+
