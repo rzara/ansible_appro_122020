@@ -1,0 +1,6 @@
+---
+# handlers file for roles/ansible_role_haproxy_1.0.0
+- name: restart haproxy
+  ansible.builtin.service:
+    name: haproxy
+    state: restarted

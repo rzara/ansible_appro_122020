@@ -1,0 +1,36 @@
+---
+# tasks file for roles/ansible_role_haproxy_1.0.0
+# Appel du module yum pour vérifier/installer le package haproxy
+    - name: "Installation haproxy"
+      ansible.builtin.yum:
+        name: "{{ pkg_haproxy }}"
+        state: present
+
+    - name: "Configuration du haproxy"
+      ansible.builtin.template:
+        src: haproxy.cfg.j2
+        dest: /etc/haproxy/haproxy.cfg
+        owner: root
+        group: root
+        mode: '0640'
+        # Utilisation du paramètre validate pour éviter la copie direct d'un fichier mal préparé
+        validate: /usr/sbin/haproxy -c -f %s
+      notify:
+        - restart haproxy
+
+    - name: "Creation d'un block pour utiliser le mode rescue"
+      block:
+        # Utilisation du module uri pour interroger le service web haproxy
+        - name: "test url haproxy"
+          uri:
+            url: "http://{{ ansible_ssh_host }}/index.html"
+            return_content: yes
+          # Utilisation directive register pour stocker le resultat du module uri
+          register: output_uri
+          failed_when: "'Consommation mémoire élevée' in output_uri.content"
+          delegate_to: localhost
+      rescue:
+        # Execution si failed dans le bloxk
+        - name: "passage dans mode rescue"
+          debug:
+            msg: "WARNING: Pb mémoire sur serveur web"

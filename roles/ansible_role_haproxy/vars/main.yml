@@ -1,0 +1,3 @@
+---
+# vars file for roles/ansible_role_haproxy_1.0.0
+pkg_haproxy: haproxy
